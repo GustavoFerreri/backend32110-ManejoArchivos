@@ -16,10 +16,11 @@ class contenedor {
             if (fs.existsSync(this.nameFile)){
                 let data= await fs.promises.readFile(this.nameFile, 'utf8');
                 let products = JSON.parse(data);
+                console.log(products.length)
                 let id = products[products.length - 1].id + 1;
                 product.id = id;
                 products.push(product);
-                await fs.promises.writeFile(this.nameFile, JSON.stringify(products, null, 2));
+                await fs.promises.writeFile(this.nameFile, JSON.stringify(products, null, 2))
                 return {status: "success", message: `product numero ${product.id} Agregado`};
             }  else {
                 product.id = 1

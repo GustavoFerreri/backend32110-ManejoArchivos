@@ -20,16 +20,21 @@
 
 const contenedor = require('./contenedor.js')
 
-const obj =(title, price, img)=>{
-    let obj = new Object();
+const product =(title, price, img)=>{
+    let product = new Object();
     obj.title = title;
     obj.price = price;
     obj.img = img;
-    return obj;
+    return product;
 } 
 
 const file = new contenedor('prueba2')
-file.save(obj('Lord of the ring', 115,'img')).then(result => console.log(result))
-file.save(obj('Spiderman', 150, 'img')).then(result => console.log(result))
 
+// Se comenta los estados, cuando se realice la prueba quitar comentario de la ejecucion por favor
+// file.save(product('Lord of the ring', 115,'img')).then(result => console.log(result))
+// file.save(product('Spiderman', 150, 'img')).then(result => console.log(result))
+// file.getAll().then(result => console.log(result))
+// file.getById(1).then(result => console.log(result))
+// file.deleteById(1).then(result => console.log(result))
+// file.deleteAll().then(result => console.log(result))
 
